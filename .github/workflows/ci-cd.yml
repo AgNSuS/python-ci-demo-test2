@@ -16,8 +16,8 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11' # Specify a stable version instead of '3.x'
-          cache: 'pip'          # Automatically caches pip dependencies for faster builds
+          python-version: '3.11'
+          cache: 'pip'
 
       - name: Install dependencies
         run: |
@@ -31,7 +31,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: success() # Only run if tests pass
+    if: success()
 
     steps:
       - name: Checkout code
